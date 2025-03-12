@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DreamHomes - Your Perfect House Awaits</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Body with a bright, textured background */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff5d7;
+      background-image: 
+  linear-gradient(45deg, rgba(255, 224, 189, 0.1) 25%, transparent 25%),
+  linear-gradient(-45deg, rgba(255, 224, 189, 0.1) 25%, transparent 25%),
+  linear-gradient(45deg, transparent 75%, rgba(255, 224, 189, 0.1) 75%),
+  linear-gradient(-45deg, transparent 75%, rgba(255, 224, 189, 0.1) 75%);
+
+      background-size: 50px 50px;
+      background-position: 0 0, 0 25px, 25px -25px, -25px 0px;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* Header with a white background */
+    header {
+      background: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-family: 'Georgia', serif;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #ff9800;
+    }
+
+    .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links li a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #ff9800;
+    }
+
+    /* Hero Section with a bright gradient */
+    .hero-content {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #fff, #ffe0b2);
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-family: 'Georgia', serif;
+      color: #ff9800;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      padding: 0 10px;
+    }
+
+    .hero-content h1::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='4' viewBox='0 0 100 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='2' x2='100' y2='2' stroke='%23ff9800' stroke-width='1' stroke-dasharray='5,5'/%3E%3C/svg%3E") repeat-x;
+      opacity: 0.2;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .hero-content p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    button {
+      background-color: #ff9800;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #fb8c00;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 40px 20px;
+    }
+
+    section h2 {
+      font-family: 'Georgia', serif;
+      color: #ff9800;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      text-align: center;
+      color: #666;
+    }
+
+    /* Search Bar */
+    .search-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-container input[type="text"] {
+      width: 300px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Gallery Images */
+    .image-gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-gallery img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e5eaf5;
+      color: #333;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      color: #ff9800;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .modal img {
+      max-width: 80%;
+      max-height: 80%;
+      border-radius: 10px;
+      transform: scale(0.5);
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .modal.active img {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Mascot Styles */
+    .mascot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      opacity: 0;
+      animation: mascotEntrance 1s ease forwards;
+      animation-delay: 3s;
+    }
+
+    @keyframes mascotEntrance {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .mascot:hover::after {
+      content: "Need help finding your dream home?";
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-size: 0.8rem;
+    }
+
+    /* Mobile-Only Element */
+    .mobile-only {
+      display: none;
+    }
+
+    /* Responsive Design */
+    @media only screen and (max-width: 768px) {
+      .logo {
+        font-size: 2rem;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+      button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      .search-container input[type="text"] {
+        width: 80%;
+      }
+      .image-gallery img {
+        width: 150px;
+        height: 100px;
+      }
+      /* Mobile-only element becomes visible */
+      .mobile-only {
+        display: block;
+        background: #da880e;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        margin: 20px 0;
+        border-radius: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">DreamHomes</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#listings">Listings</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Welcome to DreamHomes</h1>
+      <p>Your trusted platform for finding the house of your dreams!</p>
+      <button onclick="document.getElementById('listings').scrollIntoView({ behavior: 'smooth' });">
+        Explore Listings
+      </button>
+    </div>
+  </section>
+
+  <!-- Mobile-only Element -->
+  <div class="mobile-only">
+    Exclusive Mobile Offer: Get a free consultation when browsing on mobile!
+  </div>
+
+  <section id="listings">
+    <h2>Featured Listings</h2>
+    <div class="search-container">
+      <input type="text" id="searchInput" onkeyup="filterListings()" placeholder="Search listings..." />
+    </div>
+    <div class="listing-grid">
+      <div class="listing">
+        <h3>Luxury Villa</h3>
+        <div class="image-gallery">
+          <img src="images/house1/house1_1.jpg" alt="Luxury Villa - Front View" onclick="openModal(this.src)" />
+          <img src="images/house1/house1_2.jpg" alt="Luxury Villa - Living Room" onclick="openModal(this.src)" />
+          <img src="images/house1/house1_3.jpg" alt="Luxury Villa - Backyard" onclick="openModal(this.src)" />
+        </div>
+        <p>5 Bed, 4 Bath, Pool</p>
+        <span>$1,200,000</span>
+      </div>
+      <div class="listing">
+        <h3>Modern Apartment</h3>
+        <div class="image-gallery">
+          <img src="images/house2/house2_1.jpg" alt="Modern Apartment - Exterior" onclick="openModal(this.src)" />
+          <img src="images/house2//house2_2.jpg" alt="Modern Apartment - Kitchen" onclick="openModal(this.src)" />
+          <img src="images/house2//house2_3.jpg" alt="Modern Apartment - Bedroom" onclick="openModal(this.src)" />
+        </div>
+        <p>2 Bed, 2 Bath, City View</p>
+        <span>$750,000</span>
+      </div>
+      <div class="listing">
+        <h3>Cozy Cottage</h3>
+        <div class="image-gallery">
+          <img src="images/house3/house3_1.jpg" alt="Cozy Cottage - Front View" onclick="openModal(this.src)" />
+          <img src="images/house3/house3_2.jpg" alt="Cozy Cottage - Living Room" onclick="openModal(this.src)" />
+          <img src="images/house3/house3_3.jpg" alt="Cozy Cottage - Garden" onclick="openModal(this.src)" />
+        </div>
+        <p>3 Bed, 2 Bath, Garden</p>
+        <span>$450,000</span>
+      </div>
+      <div class="listing">
+        <h3>Suburban Home</h3>
+        <div class="image-gallery">
+          <img src="images/house4/house4_1.jpg" alt="Suburban Home - Front View" onclick="openModal(this.src)" />
+          <img src="images/house4/house4_2.jpg" alt="Suburban Home - Kitchen" onclick="openModal(this.src)" />
+          <img src="images/house4/house4_3.jpg" alt="Suburban Home - Garage" onclick="openModal(this.src)" />
+        </div>
+        <p>4 Bed, 3 Bath, Garage</p>
+        <span>$600,000</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      At DreamHomes, we connect you with beautiful properties that fit your lifestyle. Whether you're looking for luxury, comfort, or affordability, we have something for everyone. Your dream home is just a click away!
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:vladislav.pislaru@isa.utm.md">vladislav.pislaru@isa.utm.md</a></p>
+    <p>Phone: <a href="tel:069981551">069981551</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 DreamHomes. All rights reserved.</p>
+    <div class="social-media">
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a> |
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Mascot Element -->
+  <div class="mascot" onclick="alert('How can I help you find your dream home?')">
+    <svg width="80" height="80" viewBox="0 0 64 64" fill="#a67c52" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 12l22 18h-6v18h-12v-12h-8v12h-12v-18h-6l22-18z" />
+    </svg>
+  </div>
+
+  <div id="modal" class="modal">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <img id="modal-image" src="" alt="House Image" />
+  </div>
+
+  <script>
+    function filterListings() {
+      var input = document.getElementById('searchInput').value.toLowerCase();
+      var listings = document.getElementsByClassName('listing');
+      for (var i = 0; i < listings.length; i++) {
+        var title = listings[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
+        listings[i].style.display = title.indexOf(input) > -1 ? '' : 'none';
+      }
+    }
+    function openModal(imgSrc) {
+      const modal = document.getElementById('modal');
+      const modalImage = document.getElementById('modal-image');
+      modalImage.src = imgSrc;
+      modal.classList.add('active');
+    }
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.classList.remove('active');
+    }
+  </script>
+</body>
+
+</html>
