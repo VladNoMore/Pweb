@@ -5,31 +5,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DreamHomes - Your Perfect House Awaits</title>
+  
+  <!-- Bootstrap CSS framework integration -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Keep your original styling for sections you don't want to modify yet -->
   <link rel="stylesheet" href="reset.css" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Body with a bright, textured background */
+    /* Keep your original styling for sections you're not changing */
     body {
       font-family: Arial, sans-serif;
       background-color: #fff5d7;
       background-image: 
-  linear-gradient(45deg, rgba(255, 224, 189, 0.1) 25%, transparent 25%),
-  linear-gradient(-45deg, rgba(255, 224, 189, 0.1) 25%, transparent 25%),
-  linear-gradient(45deg, transparent 75%, rgba(255, 224, 189, 0.1) 75%),
-  linear-gradient(-45deg, transparent 75%, rgba(255, 224, 189, 0.1) 75%);
-
+        linear-gradient(45deg, rgba(255, 224, 189, 0.1) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 224, 189, 0.1) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 224, 189, 0.1) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255, 224, 189, 0.1) 75%);
       background-size: 50px 50px;
       background-position: 0 0, 0 25px, 25px -25px, -25px 0px;
       margin: 0;
       padding: 0;
       color: #333;
-    }
-
-    /* Header with a white background */
-    header {
-      background: #fff;
-      padding: 10px 20px;
-      border-bottom: 1px solid #ddd;
     }
 
     .logo {
@@ -40,25 +36,7 @@
       color: #ff9800;
     }
 
-    .nav-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 15px;
-    }
-
-    .nav-links li a {
-      color: #333;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-      color: #ff9800;
-    }
-
-    /* Hero Section with a bright gradient */
+    /* Hero Section with a bright gradient (keeping your original styling) */
     .hero-content {
       text-align: center;
       padding: 50px 20px;
@@ -73,19 +51,6 @@
       position: relative;
       display: inline-block;
       padding: 0 10px;
-    }
-
-    .hero-content h1::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: url("data:image/svg+xml,%3Csvg width='100' height='4' viewBox='0 0 100 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='2' x2='100' y2='2' stroke='%23ff9800' stroke-width='1' stroke-dasharray='5,5'/%3E%3C/svg%3E") repeat-x;
-      opacity: 0.2;
-      transform: translateY(-50%);
-      z-index: -1;
     }
 
     .hero-content p {
@@ -109,7 +74,7 @@
       background-color: #fb8c00;
     }
 
-    /* Section Styling */
+    /* Styles for other sections not being modified */
     section {
       padding: 40px 20px;
     }
@@ -138,45 +103,6 @@
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 5px;
-    }
-
-    /* Gallery Images */
-    .image-gallery img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      margin: 5px;
-      border-radius: 8px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .image-gallery img:hover {
-      transform: scale(1.2);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .image-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #e5eaf5;
-      color: #333;
-      border-top: 1px solid #ddd;
-    }
-
-    footer a {
-      color: #ff9800;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
     }
 
     /* Modal Styles */
@@ -252,66 +178,47 @@
       white-space: nowrap;
       font-size: 0.8rem;
     }
-
-    /* Mobile-Only Element */
-    .mobile-only {
-      display: none;
-    }
-
-    /* Responsive Design */
-    @media only screen and (max-width: 768px) {
-      .logo {
-        font-size: 2rem;
-      }
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      .hero-content p {
-        font-size: 1.2rem;
-      }
-      button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-      }
-      .search-container input[type="text"] {
-        width: 80%;
-      }
-      .image-gallery img {
-        width: 150px;
-        height: 100px;
-      }
-      /* Mobile-only element becomes visible */
-      .mobile-only {
-        display: block;
-        background: #da880e;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-        margin: 20px 0;
-        border-radius: 5px;
-      }
-    }
   </style>
 </head>
 
 <body>
+  <!-- SECTION 1: Navigation using Bootstrap -->
+  <!-- Using Bootstrap layout classes: navbar-expand-lg for responsive layout and collapse -->
+  <!-- Using Bootstrap colors and styles: bg-dark, navbar-dark, text-light -->
   <header>
-    <nav>
-      <div class="logo">DreamHomes</div>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#listings">Listings</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand logo" href="#">DreamHomes</a>
+        
+        <!-- Mobile menu button using Bootstrap component -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Using Bootstrap collapse for responsive menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#listings">Listings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
-
+  <!-- Hero section - keeping original styling -->
   <section id="hero">
     <div class="hero-content">
       <h1>Welcome to DreamHomes</h1>
@@ -322,56 +229,119 @@
     </div>
   </section>
 
-  <!-- Mobile-only Element -->
-  <div class="mobile-only">
+  <!-- Mobile-only Element - Using Bootstrap display utilities -->
+  <div class="d-block d-md-none alert alert-warning text-center">
     Exclusive Mobile Offer: Get a free consultation when browsing on mobile!
   </div>
 
+  <!-- SECTION 2: Listings section with Bootstrap -->
+  <!-- Using Bootstrap layout classes: row, col-md-6, col-lg-3 for responsive grid -->
+  <!-- Using Bootstrap colors and styles: card, bg-light, shadow, badge, etc. -->
   <section id="listings">
-    <h2>Featured Listings</h2>
-    <div class="search-container">
-      <input type="text" id="searchInput" onkeyup="filterListings()" placeholder="Search listings..." />
-    </div>
-    <div class="listing-grid">
-      <div class="listing">
-        <h3>Luxury Villa</h3>
-        <div class="image-gallery">
-          <img src="images/house1/house1_1.jpg" alt="Luxury Villa - Front View" onclick="openModal(this.src)" />
-          <img src="images/house1/house1_2.jpg" alt="Luxury Villa - Living Room" onclick="openModal(this.src)" />
-          <img src="images/house1/house1_3.jpg" alt="Luxury Villa - Backyard" onclick="openModal(this.src)" />
-        </div>
-        <p>5 Bed, 4 Bath, Pool</p>
-        <span>$1,200,000</span>
+    <div class="container">
+      <h2>Featured Listings</h2>
+      <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterListings()" 
+               class="form-control w-75 mx-auto" placeholder="Search listings..." />
       </div>
-      <div class="listing">
-        <h3>Modern Apartment</h3>
-        <div class="image-gallery">
-          <img src="images/house2/house2_1.jpg" alt="Modern Apartment - Exterior" onclick="openModal(this.src)" />
-          <img src="images/house2//house2_2.jpg" alt="Modern Apartment - Kitchen" onclick="openModal(this.src)" />
-          <img src="images/house2//house2_3.jpg" alt="Modern Apartment - Bedroom" onclick="openModal(this.src)" />
+      
+      <!-- Bootstrap grid layout system -->
+      <div class="row g-4" id="listingContainer">
+        <!-- Listing 1 -->
+        <div class="col-12 col-md-6 col-lg-3 listing">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+              <h3 class="h5 mb-0">Luxury Villa</h3>
+            </div>
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-center">
+                <img src="images/house1/house1_1.jpg" alt="Luxury Villa - Front View" 
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house1/house1_2.jpg" alt="Luxury Villa - Living Room"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house1/house1_3.jpg" alt="Luxury Villa - Backyard"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+              </div>
+              <p class="card-text mt-3">5 Bed, 4 Bath, Pool</p>
+              <span class="badge bg-warning text-dark fs-6">$1,200,000</span>
+            </div>
+          </div>
         </div>
-        <p>2 Bed, 2 Bath, City View</p>
-        <span>$750,000</span>
-      </div>
-      <div class="listing">
-        <h3>Cozy Cottage</h3>
-        <div class="image-gallery">
-          <img src="images/house3/house3_1.jpg" alt="Cozy Cottage - Front View" onclick="openModal(this.src)" />
-          <img src="images/house3/house3_2.jpg" alt="Cozy Cottage - Living Room" onclick="openModal(this.src)" />
-          <img src="images/house3/house3_3.jpg" alt="Cozy Cottage - Garden" onclick="openModal(this.src)" />
+        
+        <!-- Listing 2 -->
+        <div class="col-12 col-md-6 col-lg-3 listing">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+              <h3 class="h5 mb-0">Modern Apartment</h3>
+            </div>
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-center">
+                <img src="images/house2/house2_1.jpg" alt="Modern Apartment - Exterior" 
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house2/house2_2.jpg" alt="Modern Apartment - Kitchen"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house2/house2_3.jpg" alt="Modern Apartment - Bedroom"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+              </div>
+              <p class="card-text mt-3">2 Bed, 2 Bath, City View</p>
+              <span class="badge bg-warning text-dark fs-6">$750,000</span>
+            </div>
+          </div>
         </div>
-        <p>3 Bed, 2 Bath, Garden</p>
-        <span>$450,000</span>
-      </div>
-      <div class="listing">
-        <h3>Suburban Home</h3>
-        <div class="image-gallery">
-          <img src="images/house4/house4_1.jpg" alt="Suburban Home - Front View" onclick="openModal(this.src)" />
-          <img src="images/house4/house4_2.jpg" alt="Suburban Home - Kitchen" onclick="openModal(this.src)" />
-          <img src="images/house4/house4_3.jpg" alt="Suburban Home - Garage" onclick="openModal(this.src)" />
+        
+        <!-- Listing 3 -->
+        <div class="col-12 col-md-6 col-lg-3 listing">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+              <h3 class="h5 mb-0">Cozy Cottage</h3>
+            </div>
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-center">
+                <img src="images/house3/house3_1.jpg" alt="Cozy Cottage - Front View" 
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house3/house3_2.jpg" alt="Cozy Cottage - Living Room"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house3/house3_3.jpg" alt="Cozy Cottage - Garden"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+              </div>
+              <p class="card-text mt-3">3 Bed, 2 Bath, Garden</p>
+              <span class="badge bg-warning text-dark fs-6">$450,000</span>
+            </div>
+          </div>
         </div>
-        <p>4 Bed, 3 Bath, Garage</p>
-        <span>$600,000</span>
+        
+        <!-- Listing 4 -->
+        <div class="col-12 col-md-6 col-lg-3 listing">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-light">
+              <h3 class="h5 mb-0">Suburban Home</h3>
+            </div>
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-center">
+                <img src="images/house4/house4_1.jpg" alt="Suburban Home - Front View" 
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house4/house4_2.jpg" alt="Suburban Home - Kitchen"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+                <img src="images/house4/house4_3.jpg" alt="Suburban Home - Garage"
+                     class="img-fluid m-1 rounded" style="width: 90px; height: 70px; object-fit: cover;"
+                     onclick="openModal(this.src)" />
+              </div>
+              <p class="card-text mt-3">4 Bed, 3 Bath, Garage</p>
+              <span class="badge bg-warning text-dark fs-6">$600,000</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -405,12 +375,28 @@
     </svg>
   </div>
 
-  <div id="modal" class="modal">
-    <span class="close-modal" onclick="closeModal()">&times;</span>
-    <img id="modal-image" src="" alt="House Image" />
+  <!-- Using Bootstrap modal for image display -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Property Image</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modal-image" src="" alt="House Image" class="img-fluid" />
+        </div>
+      </div>
+    </div>
   </div>
 
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
   <script>
+    // Initialize Bootstrap modal
+    var imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+    
     function filterListings() {
       var input = document.getElementById('searchInput').value.toLowerCase();
       var listings = document.getElementsByClassName('listing');
@@ -419,15 +405,10 @@
         listings[i].style.display = title.indexOf(input) > -1 ? '' : 'none';
       }
     }
+    
     function openModal(imgSrc) {
-      const modal = document.getElementById('modal');
-      const modalImage = document.getElementById('modal-image');
-      modalImage.src = imgSrc;
-      modal.classList.add('active');
-    }
-    function closeModal() {
-      const modal = document.getElementById('modal');
-      modal.classList.remove('active');
+      document.getElementById('modal-image').src = imgSrc;
+      imageModal.show();
     }
   </script>
 </body>
